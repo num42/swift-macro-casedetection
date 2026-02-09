@@ -1,0 +1,20 @@
+public enum TestEnum {
+  case firstCase
+  case secondCase
+
+    public var isFirstCase: Bool {
+      if case .firstCase = self {
+        true
+      } else {
+        false
+      }
+    }
+
+    public var isSecondCase: Bool {
+      if case .secondCase = self {
+        true
+      } else {
+        false
+      }
+    }
+}
