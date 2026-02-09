@@ -29,9 +29,7 @@ public struct CaseDetectionMacro: MemberMacro {
       throw DiagnosticsError(diagnostics: [diagnostic])
     }
 
-    let modifiers = declaration.modifiers
-      .map { $0.description.replacingOccurrences(of: "\n", with: "") }
-      .joined(separator: "")
+    let modifiers = declaration.accessModifierPrefix
 
     return declaration.memberBlock.members
       .compactMap { $0.decl.as(EnumCaseDeclSyntax.self) }
