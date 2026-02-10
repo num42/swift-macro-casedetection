@@ -1,9 +1,11 @@
-import MacroTester
-import SwiftSyntaxMacros
-import SwiftSyntaxMacrosTestSupport
-import Testing
+internal import MacroTester
+internal import SwiftSyntaxMacros
+internal import SwiftSyntaxMacrosTestSupport
+internal import Testing
 
 #if canImport(CaseDetectionMacros)
+  import CaseDetectionMacros
+
   private let testMacros: [String: Macro.Type] = [
     "CaseDetection": CaseDetectionMacro.self
   ]

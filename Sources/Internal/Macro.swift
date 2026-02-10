@@ -1,8 +1,7 @@
-import Foundation
-import SwiftDiagnostics
-import SwiftSyntax
-import SwiftSyntaxBuilder
-import SwiftSyntaxMacros
+internal import MacroHelper
+public import SwiftDiagnostics
+public import SwiftSyntax
+public import SwiftSyntaxMacros
 
 public struct CaseDetectionMacro: MemberMacro {
   public enum MacroDiagnostic: String, DiagnosticMessage {
