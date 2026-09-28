@@ -5,7 +5,7 @@ public import SwiftSyntaxMacros
 
 public struct CaseDetectionMacro: MemberMacro {
   public enum MacroDiagnostic: String, DiagnosticMessage {
-    case requiresEnum = "#CaseDetection requires an enum"
+    case requiresEnum = "@CaseDetection requires an enum"
 
     public var message: String { rawValue }
 
@@ -24,7 +24,6 @@ public struct CaseDetectionMacro: MemberMacro {
   ) throws -> [DeclSyntax] {
     guard declaration.as(EnumDeclSyntax.self) != nil else {
       let diagnostic = Diagnostic(node: Syntax(attribute), message: MacroDiagnostic.requiresEnum)
-      context.diagnose(diagnostic)
       throw DiagnosticsError(diagnostics: [diagnostic])
     }
 
