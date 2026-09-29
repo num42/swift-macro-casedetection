@@ -1,3 +1,4 @@
+internal import MacroTestHelper
 internal import SwiftSyntaxMacrosGenericTestSupport
 internal import Testing
 
@@ -7,7 +8,7 @@ internal import Testing
   @Suite
   struct CaseDetectionDiagnosticsTests {
     @Test func structThrowsError() throws {
-      assertMacroExpansion(
+      MacroTestHelper.assertMacroExpansion(
         """
         @CaseDetection
         struct AStruct {}
